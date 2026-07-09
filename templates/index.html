@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BunkBuddy</title>
+</head>
+
+<body>
+    <section class="hero">
+        <h1>BunkBuddy</h1>
+        <p>Bunk smart, score smart! Your ultimate academic companion to balance attendance goals and chill scenes
+            seamlessly.</p>
+        <button class="cta-btn">Get Started</button>
+    </section>
+
+    <section class="features">
+        <div class="features-grid">
+
+            <a href="/bunk-calculator" class="card-link">
+                <div class="card card-bunk">
+                    <div class="card-icon">📅</div>
+                    <h3>Bunk Calculator</h3>
+                    <p>Calculate exactly how many classes you can skip without falling below the safety margin, or how
+                        many you need to attend to recover.</p>
+                </div>
+            </a>
+
+            <a href="/cgpa-predictor" class="card-link">
+                <div class="card card-cgpa">
+                    <div class="card-icon">🎓</div>
+                    <h3>CGPA Predictor</h3>
+                    <p>Input your targeted grades and current scores to map out your semester goals and keep your GPA
+                        right where you want it.</p>
+                </div>
+            </a>
+
+            <a href="/smart-alerts" class="card-link">
+                <div class="card card-alerts">
+                    <div class="card-icon">⚠️</div>
+                    <h3>Smart Alerts</h3>
+                    <p>Get real-time boundary warnings when your attendance gets dangerously close to the critical
+                        threshold limits.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+    <footer class="main-footer">
+        <p>&copy; 2026 BunkBuddy. Made with ❤️ for students. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BunkBuddy - Bunk Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bunk-calculator.css') }}">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+        <div class="form-card">
+
+            <div class="form-header">
+                <h2>Bunk Calculator</h2>
+                <p>Analyze your attendance safety margin</p>
+            </div>
+
+            {% if prediction %}
+            <div class="result-card">
+                <div class="result-badge-wrapper">
+                    <span class="status-badge {{ status }}">{{ status }}</span>
+                </div>
+                <div class="gpa-score">
+                    {% if status == 'SAFE' %}
+                    🎉 {{ prediction }}
+                    {% elif status == 'WARNING' %}
+                    ⚠️ {{ prediction }}
+                    {% elif status == 'DANGER' %}
+                    🚨 {{ prediction }}
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+
+
+            <form autocomplete="off" method="POST" action="/calculate-bunk-status">
+                <div class="input-wrapper">
+                    <label for="total">Total Classes in the Semester</label>
+                    <input type="number" id="total" name="total_classes" placeholder="Enter total conducted classes"
+                        required>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="attended">Classes Attended</label>
+                    <input type="number" name="classes_attended" id="attended" placeholder="Enter classes you attended"
+                        required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="attended">Classes Bunked</label>
+                    <input type="number" name="classes_bunked" id="attended" placeholder="Enter classes you attended"
+                        required>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="required">Minimum Required Attendance (%)</label>
+                    <input type="number" name="rule" id="required" placeholder="e.g., 75" required>
+                </div>
+
+                <button type="submit" class="action-btn">Calculate Status</button>
+            </form>
+
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 BunkBuddy. Made with ❤️ for students. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BunkBuddy - Smart Alerts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='smart-alerts.css') }}">
+
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+        <div class="form-card">
+
+            <div class="form-header">
+                <h2>Smart Alerts 📱</h2>
+                <p>Track your daily distractions and get instant academic risk alerts</p>
+            </div>
+            {% if prediction %}
+            <div class="result-card">
+                <h3>Reports and Alerts</h3>
+                <span class="status-badge {{ status }}">{{ title }}</span>
+                <div class="gpa-score">{{ prediction }}</div>
+                <!-- <h4>Actionable Tips : </h4>
+                {% if status == 'safe' %}
+                <p class="feedback-text">
+                <ul>
+                    <li>Keep doing exactly what you are doing right now.</li>
+                    <li>Protect this routine during heavy exam weeks.</li>
+                    <li>Maintain your sleep schedule to keep your focus sharp.</li>
+                </ul>
+                </p>
+                {% endif %}
+                {% if status == 'warning' %}
+                <p>
+                <ul>
+                    <li>Aim to attend every single lecture over the next 7 days.</li>
+                    <li>Limit social media and OTT streaming to a maximum of 2 hours daily.</li>
+                    <li>Track your screen usage to ensure it doesn't quietly creep up.</li>
+                </ul>
+                </p>
+                {% endif %}
+                {% if status == 'danger' %}
+                <p>
+                <ul>
+                    <li>Stop bunking immediately to cross the mandatory 75% line.</li>
+                    <li>Cut your non-academic screen time down by at least 50% this week.</li>
+                    <li>Prioritize getting back on track over casual entertainment.</li>
+                </ul> 
+                </p>
+                {% endif %} -->
+            </div>
+            {% endif %}
+            <form autocomplete="off" action="/alerts" method="POST">
+                <div class="input-row">
+                    <div class="input-wrapper">
+                        <label for="social-media">Social Media / Day</label>
+                        <input type="number" name="social_media" id="social-media" placeholder="e.g., 3 Hours" min="0"
+                            max="24" step="0.5" required>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="netflix">Netflix/OTT / Day</label>
+                        <input type="number" name="netflix" id="netflix" placeholder="e.g., 2 Hours" min="0" max="24"
+                            step="0.5" required>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="sleep-hours">Sleep Hours</label>
+                    <input type="number" name="sleep_hours" id="sleep-hours" placeholder="Enter your daily sleep hours"
+                        min="0" max="24" step="0.5" required>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="current-attendance">Current Attendance (%)</label>
+                    <input type="number" name="attendance" id="current-attendance" placeholder="e.g., 72" min="0"
+                        max="100" required>
+                </div>
+
+                <button type="submit" class="action-btn">Analyze Risk & Get Alerts</button>
+            </form>
+
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 BunkBuddy. Made with ❤️ for students. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

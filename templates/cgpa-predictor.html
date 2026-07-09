@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BunkBuddy - CGPA Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cgpa-predictor.css') }}">
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+        <div class="form-card">
+
+            <div class="form-header">
+                <h2>CGPA Predictor</h2>
+                <p>Forecast your semester GPA based on your lifestyle and scores</p>
+            </div>
+
+            {% if prediction %}
+            <div class="result-card">
+                <h3>Predicted CGPA: </h3>
+                <div class="gpa-score">{{ prediction }}</div>
+                <p class="feedback-text">
+                    {% if status == 'SAFE' %} Everything looks solid! Chill maaro. {% endif %}
+                    {% if status == 'WARNING' %} Borderline par ho, thodi padhai badhao. {% endif %}
+                    {% if status == 'DANGER' %} Danger zone! Reels band karo aur padhne baitho. {% endif %}
+                    {% if status == 'ERROR OCCURRED' %} ERROR OCCURED ! RETRY LATER ! {% endif %}
+                </p>
+            </div>
+            {% endif %}
+
+            <form autocomplete="off" action="/predict_cgpa" method="POST">
+                <div class="input-wrapper">
+                    <label for="attendance">Attendance (%)</label>
+                    <input type="number" id="attendance" name="attendance" placeholder="e.g., 85" min="0" max="100" required>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-wrapper">
+                        <label for="study-hours">Study Hours / Day</label>
+                        <input type="number" id="study-hours" name="study_hours" placeholder="e.g., 4" min="0" max="24" step="0.5"
+                            required>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="sleep-hours">Sleep Hours</label>
+                        <input type="number" name="sleep_hours" id="sleep-hours" placeholder="e.g., 7" min="0" max="24" step="0.5"
+                            required>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="stress">Stress Level (1-10)</label>
+                    <input type="number" id="stress" name="stress" placeholder="1 (Low) to 10 (High)" min="1" max="10" required>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="internals">Marks (out of 100) (Last Exam)</label>
+                    <input type="number" id="internals" name="marks" placeholder="Enter your internals score" min="0" max="100"
+                        required>
+                </div>
+
+                <button type="submit" class="action-btn">Predict CGPA</button>
+            </form>
+
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 BunkBuddy. Made with ❤️ for students. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
