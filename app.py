@@ -114,6 +114,9 @@ def alert_msgs():
     elif 75 <= attendance <= 80 or 4 <= distraction <= 6 or sleep_hours < 5:
         return render_template('smart-alerts.html', status='WARNING', title="⚠️ Warning: Balance Slipping", prediction="You are in the Warning Zone. While you aren't in deep trouble yet, your habits are borderline. Catching up now is easy, but ignoring these numbers will push you into the danger zone.")
     
+@app.route('/get-started')
+def get_started():
+    return render_template('get-started.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

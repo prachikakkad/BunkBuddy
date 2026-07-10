@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About BunkBuddy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='get-started.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <section class="hero-section">
+            <span class="badge-student">Exclusively for College Students</span>
+            <h1>What is BunkBuddy?</h1>
+            <p>
+                BunkBuddy is the ultimate student companion platform designed to bridge the gap between academic
+                responsibilities and campus life. We believe engineering or college life shouldn't just be about stress.
+                BunkBuddy uses automated predictive logic to calculate strict attendance thresholds, allowing you to
+                manage your presence efficiently without compromising your semester criteria.
+            </p>
+        </section>
+
+        <h2 class="section-title">Core Ecosystem Features</h2>
+
+        <section class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-calculator"></i></div>
+                <h3>Bunk Calculator</h3>
+                <p>An intelligent script tracking your semester timeline to determine exactly how many consecutive
+                    classes you can skip or must attend to preserve your absolute target.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>CGPA Predictor</h3>
+                <p>Leverages robust Machine Learning architectures to forecast your definitive final grade-point
+                    averages based on internal evaluations and custom trends.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-bell"></i></div>
+                <h3>Smart Alerts</h3>
+                <p>Generates instantaneous, color-coded threshold metrics to safely warn you before your metrics
+                    approach critical academic danger zones.</p>
+            </div>
+        </section>
+
+        <div class="lower-grid">
+
+            <section class="tech-card">
+                <h3 style="margin-bottom: 1.2rem; font-size: 1.3rem;">System Tech Stack</h3>
+                <ul class="tech-list">
+                    <li class="tech-item">
+                        <span class="tech-label">Core Architecture</span>
+                        <span class="tech-value">Python</span>
+                    </li>
+                    <li class="tech-item">
+                        <span class="tech-label">Backend Engine</span>
+                        <span class="tech-value">Flask Framework</span>
+                    </li>
+                    <li class="tech-item">
+                        <span class="tech-label">Machine Learning</span>
+                        <span class="tech-value">Scikit-learn</span>
+                    </li>
+                    <li class="tech-item">
+                        <span class="tech-label">Interface Layer</span>
+                        <span class="tech-value">HTML5 & CSS3 Modules</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="profile-card">
+                <h3>Prachi Kakkad</h3>
+                <div class="profile-tag">Lead Architect</div>
+                <p class="profile-bio">
+                    Data Science student passionate about building production-ready, real-world Machine Learning
+                    applications.
+                </p>
+                <div class="btn-group">
+                    <a href="https://www.linkedin.com/in/prachi-kakkad/" class="btn btn-linkedin" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/prachikakkad" class="btn btn-github" target="_blank">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
