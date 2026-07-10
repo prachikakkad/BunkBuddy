@@ -83,7 +83,11 @@ body {
     margin-bottom: 2.5rem;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
-
+ h1 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 100%;
+}
 .hero-section h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -173,9 +177,6 @@ body {
 @media (max-width: 768px) {
     .lower-grid {
         grid-template-columns: 1fr;
-    }
-    h1 {
-        font-size: 1.5rem;
     }
 }
 
