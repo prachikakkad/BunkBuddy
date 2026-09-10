@@ -1,13 +1,13 @@
 # 🎓 BunkBuddy — Multi-Dimensional Academic Performance Predictor
 
-[![Live App](https://shields.io)](https://your-live-render-app-url-here.com)
+[![Live App](https://shields.io)](https://bunkbuddy-z76j.onrender.com/)
 
 **BunkBuddy** is a production-ready web application designed to assist university students with optimizing academic schedules, tracking attendance thresholds, and forecasting GPA trajectories. The architecture features an engineered **Scikit-Learn linear regression pipeline** integrated into a scalable **Flask** backend to deliver real-time predictive analytics based on student behavioral parameters.
 
 ---
 
 ### 🚀 Live Deployment
-👉 **[Click Here to Launch the BunkBuddy Web Application](https://your-live-render-app-url-here.com)**
+👉 **[Click Here to Launch the BunkBuddy Web Application](https://bunkbuddy-z76j.onrender.com/)**
 
 ---
 
